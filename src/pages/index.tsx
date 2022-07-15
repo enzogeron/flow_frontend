@@ -22,7 +22,6 @@ const IndexPage: NextPage = () => {
 
   const getForecastByCity = async (city) => {
     const cityGeo = await getGeolocationByCity(city)
-    console.log(cityGeo)
     await getForecastByGeoposition(cityGeo.lat, cityGeo.lon)
   }
 
