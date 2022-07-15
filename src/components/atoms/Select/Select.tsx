@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Select } from 'antd'
 
 import { SelectProps } from './interface'
+import styles from './Select.module.scss'
 
 const SelectCustom: FC<SelectProps> = ({
   options,
@@ -15,18 +16,20 @@ const SelectCustom: FC<SelectProps> = ({
   }
 
   return (
-    <Select
-      size="middle"
-      defaultValue={defaultValue || options[0]}
-      onChange={handleChange}
-      style={{ width: 200 }}
-    >
-      {options.map((option, index) => (
-        <Option key={index} value={option}>
-          {option}
-        </Option>
-      ))}
-    </Select>
+    <div className={styles.container}>
+      <Select
+        size="middle"
+        defaultValue={defaultValue || options[0]}
+        onChange={handleChange}
+        style={{ width: 200 }}
+      >
+        {options.map((option, index) => (
+          <Option key={index} value={option}>
+            {option}
+          </Option>
+        ))}
+      </Select>
+    </div>
   )
 }
 

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 
 import { Container, SelectCustom } from '../components/atoms'
 import { Forecast } from '../components/molecules'
+import { Header } from '../components/organisms'
 import { HeadSeo, Layout } from '../components/templates'
 import { CITIES } from '../constants'
 import { getGeolocationByCity } from '../services/openWeatherAPI'
@@ -39,8 +40,14 @@ const IndexPage: NextPage = () => {
       <HeadSeo title="Flow Desafio" />
 
       <Layout>
+        <Header />
+
         <Container>
-          <SelectCustom options={CITIES} onChange={getForecastByCity} />
+          <SelectCustom
+            options={CITIES}
+            onChange={getForecastByCity}
+            defaultValue={'City'}
+          />
           <Forecast items={items} />
         </Container>
       </Layout>

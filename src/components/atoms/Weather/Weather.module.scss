@@ -12,5 +12,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-basis: 30%;
+  flex-basis: 40%;
+
+  @include respond-to($bp-sm) {
+    flex-basis: 60%;
+  }
 }
